@@ -9,14 +9,13 @@ from .survey_ingest import import_csv
 
 app = Flask(__name__)
 
-@app.before_first_request
 def init_db():
     Base.metadata.create_all(bind=engine)
-# Call once at startup (Flask 3 safe)
+
+# Initialize database once at startup (Flask 3 compatible)
 with app.app_context():
-    init_db()    
-    
-    
+    init_db()
+
     
 
 @app.route('/')
