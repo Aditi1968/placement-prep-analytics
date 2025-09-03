@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>PPARS Dashboard</h1>
+<div class="kpis">
+  <div class="card">Questions<br><b>{{ stats.questions }}</b></div>
+  <div class="card">Tests<br><b>{{ stats.tests }}</b></div>
+  <div class="card">Attempts<br><b>{{ stats.attempts }}</b></div>
+  <div class="card">Learners<br><b>{{ stats.learners }}</b></div>
+</div>
+<div class="charts">
+  {% if s_chart %}<img src="{{ s_chart }}" alt="Success by Company">{% endif %}
+  {% if g_chart %}<img src="{{ g_chart }}" alt="Top Gaps">{% endif %}
+</div>
+{% endblock %}

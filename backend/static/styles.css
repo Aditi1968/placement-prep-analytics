@@ -1,0 +1,14 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 0; background:#0b1020; color:#e7ecff; }
+nav { display:flex; gap:14px; padding:12px 16px; background:#121833; position:sticky; top:0; }
+nav a { color:#c7d2fe; text-decoration:none; padding:6px 10px; border-radius:8px; background:#1b2350; }
+main { padding:20px; }
+.kpis { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-bottom:16px; }
+.card { background:#121833; border:1px solid #22307a; border-radius:14px; padding:14px; text-align:center; }
+table { width:100%; border-collapse: collapse; margin-top:10px; }
+th, td { border:1px solid #22307a; padding:8px; vertical-align:top; }
+input, select, textarea, button { background:#0f1633; color:#e7ecff; border:1px solid #22307a; border-radius:8px; padding:8px; margin:4px; }
+textarea { width:100%; height:120px; }
+button { cursor:pointer; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 13px; }
+.ok { color:#9be9a8; }
+.charts img { max-width:100%; background:#fff; padding:6px; border-radius:10px; }

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Recent Attempts</h2>
+<table>
+  <tr><th>When</th><th>Learner ID</th><th>Test ID</th><th>QID</th><th>Correct</th><th>Reason</th></tr>
+  {% for a in attempts %}
+  <tr>
+    <td>{{ a.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+    <td>{{ a.learner_id }}</td>
+    <td>{{ a.test_id }}</td>
+    <td>{{ a.question_id }}</td>
+    <td>{{ "✓" if a.correct else "✗" }}</td>
+    <td>{{ a.fail_reason }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

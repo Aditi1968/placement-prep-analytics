@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Impact Analysis</h2>
+<div class="charts">
+  {% if s_chart %}<img src="{{ s_chart }}" alt="Success by Company">{% else %}<p>No attempts yet.</p>{% endif %}
+  {% if g_chart %}<img src="{{ g_chart }}" alt="Top Gaps">{% endif %}
+</div>
+{% endblock %}

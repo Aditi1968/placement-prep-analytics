@@ -1,0 +1,11 @@
+company,role,difficulty,text,solution_link,tags
+Scaler,SDE1,Easy,"Reverse a string in Python without using builtins.","https://realpython.com/reverse-string-python/","strings,python"
+Scaler,SDE1,Medium,"Given an array, return length of longest subarray with sum K.","","prefix-sum,sliding-window"
+Scaler,SDE1,Medium,"Design a rate-limiter for an API with burst + steady limits.","","system-design,ratelimit"
+Scaler,Data Analyst,Easy,"Write SQL to find the 2nd highest salary from employees table.","","sql,ranking"
+Google,SDE1,Hard,"Implement LRU Cache with O(1) operations.","","design,hashmap,ll"
+Amazon,SDE1,Medium,"Find top-K frequent elements in an array.","","heap,hashmap"
+Microsoft,SDE1,Medium,"Detect cycle in a directed graph.","","graph,dfs"
+Meta,SDE1,Hard,"Serialize and deserialize a binary tree.","","tree,dfs"
+Amazon,Data Engineer,Medium,"SQL: sessions per user per day using window functions.","","sql,windows"
+Scaler,DevOps,Easy,"Explain blue-green deployment and how to rollback quickly.","","devops,deploy"

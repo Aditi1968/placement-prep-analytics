@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Questions</h2>
+<form method="get" class="filters">
+  <input name="company" placeholder="Company" value="{{ request.args.get('company','') }}">
+  <input name="role" placeholder="Role" value="{{ request.args.get('role','') }}">
+  <select name="difficulty">
+    <option value="">Any difficulty</option>
+    {% for d in ['Easy','Medium','Hard'] %}
+    <option value="{{d}}" {% if request.args.get('difficulty')==d %}selected{% endif %}>{{d}}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Filter</button>
+</form>
+<table>
+  <tr><th>Company</th><th>Role</th><th>Difficulty</th><th>Question</th><th>Solution</th><th>Tags</th></tr>
+  {% for q in questions %}
+  <tr>
+    <td>{{ q.company }}</td><td>{{ q.role }}</td><td>{{ q.difficulty }}</td>
+    <td class="mono">{{ q.text[:120] }}{% if q.text|length>120 %}...{% endif %}</td>
+    <td>{% if q.solution_link %}<a href="{{ q.solution_link }}" target="_blank">Link</a>{% endif %}</td>
+    <td>{{ q.tags }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<hr>
+<h3>Add Question</h3>
+<form method="post">
+  <input name="company" placeholder="Company" required>
+  <input name="role" placeholder="Role" required>
+  <select name="difficulty">{% for d in ['Easy','Medium','Hard'] %}<option>{{ d }}</option>{% endfor %}</select>
+  <input name="tags" placeholder="Tags (comma separated)">
+  <input name="solution_link" placeholder="Solution URL (optional)">
+  <textarea name="text" placeholder="Question text..." required></textarea>
+  <button type="submit">Add</button>
+</form>
+{% endblock %}

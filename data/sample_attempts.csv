@@ -1,0 +1,4 @@
+learner_id,test_id,question_id,correct,time_taken_s,fail_reason,created_at
+1,1,1,True,30,,2025-08-01 12:00:00
+1,1,2,False,120,Time complexity,2025-08-01 12:05:00
+2,1,3,False,200,Edge cases,2025-08-02 10:00:00

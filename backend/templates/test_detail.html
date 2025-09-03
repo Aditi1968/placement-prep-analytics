@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Test: {{ t.name }} — {{ t.company }} / {{ t.role }}</h2>
+<form method="post">
+  <label>Record attempts for learner:</label>
+  <select name="learner_id">
+    {% for l in learners %}<option value="{{ l.id }}">{{ l.name }} ({{ l.batch }})</option>{% endfor %}
+  </select>
+  <table>
+    <tr><th>#</th><th>Question</th><th>Correct?</th><th>Failure reason (if any)</th></tr>
+    {% for tq in tqs %}
+    <tr>
+      <td>{{ tq.ord }}</td>
+      <td class="mono">{{ tq.question.text }}</td>
+      <td><input type="checkbox" name="correct_{{ tq.id }}"></td>
+      <td><input name="reason_{{ tq.id }}" placeholder="e.g., Time complexity, SQL joins, Edge cases"></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <button type="submit">Save Attempts</button>
+</form>
+{% endblock %}

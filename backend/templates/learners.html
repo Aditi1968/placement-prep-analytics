@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Learners</h2>
+<table>
+  <tr><th>Name</th><th>Email</th><th>Batch</th></tr>
+  {% for l in learners %}
+  <tr><td>{{ l.name }}</td><td>{{ l.email }}</td><td>{{ l.batch }}</td></tr>
+  {% endfor %}
+</table>
+<hr>
+<h3>Add Learner</h3>
+<form method="post">
+  <input name="name" placeholder="Name" required>
+  <input name="email" placeholder="Email" required>
+  <input name="batch" placeholder="Batch (e.g., DSML-2025)">
+  <button type="submit">Add</button>
+</form>
+{% endblock %}

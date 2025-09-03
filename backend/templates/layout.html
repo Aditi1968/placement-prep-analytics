@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>PPARS</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('questions') }}">Questions</a>
+    <a href="{{ url_for('tests') }}">Tests</a>
+    <a href="{{ url_for('learners') }}">Learners</a>
+    <a href="{{ url_for('attempts') }}">Attempts</a>
+    <a href="{{ url_for('analysis') }}">Analysis</a>
+    <a href="{{ url_for('surveys') }}">Surveys</a>
+    <a href="{{ url_for('bootcamps') }}">Bootcamps</a>
+  </nav>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

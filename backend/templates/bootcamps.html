@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Bootcamps</h2>
+<table>
+  <tr><th>When</th><th>Topic</th><th>Company</th><th>Role</th><th>Mode</th><th>Capacity</th><th>ICS</th></tr>
+  {% for b in bootcamps %}
+  <tr>
+    <td>{{ b.starts_at.strftime('%Y-%m-%d %H:%M') }}</td>
+    <td>{{ b.topic }}</td>
+    <td>{{ b.company }}</td>
+    <td>{{ b.role }}</td>
+    <td>{{ b.mode }}</td>
+    <td>{{ b.capacity }}</td>
+    <td><a href="{{ url_for('bootcamp_ics', bid=b.id) }}">Download</a></td>
+  </tr>
+  {% endfor %}
+</table>
+<hr>
+<h3>Create Bootcamp</h3>
+<form method="post">
+  <input name="topic" placeholder="Topic" required>
+  <input name="company" placeholder="Company">
+  <input name="role" placeholder="Role">
+  <input name="starts_at" type="datetime-local" required>
+  <select name="mode"><option>online</option><option>offline</option></select>
+  <input name="capacity" type="number" value="100">
+  <input name="location" placeholder="Location (if offline)">
+  <button type="submit">Create</button>
+</form>
+{% endblock %}

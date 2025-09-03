@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Tests</h2>
+<table>
+  <tr><th>Created</th><th>Name</th><th>Company</th><th>Role</th><th>Open</th></tr>
+  {% for t in tests %}
+  <tr>
+    <td>{{ t.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+    <td>{{ t.name }}</td>
+    <td>{{ t.company }}</td>
+    <td>{{ t.role }}</td>
+    <td><a href="{{ url_for('test_detail', test_id=t.id) }}">Open</a></td>
+  </tr>
+  {% endfor %}
+</table>
+<hr>
+<h3>Generate Test</h3>
+<form method="post">
+  <input name="name" placeholder="Name" value="Last-Minute Prep">
+  <input name="company" placeholder="Company" required>
+  <input name="role" placeholder="Role" required>
+  <select name="difficulty">{% for d in ['Easy','Medium','Hard'] %}<option>{{d}}</option>{% endfor %}</select>
+  <input name="n" type="number" min="1" max="20" value="5">
+  <button type="submit">Generate</button>
+</form>
+{% endblock %}
